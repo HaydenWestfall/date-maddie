@@ -34,6 +34,7 @@ export enum WizardStep {
 }
 
 export enum AfterDarkStep {
+  Disclaimer = 'disclaimer',
   Curfew = 'curfew',
   MassageGate = 'massageGate',
   MassageWhere = 'massageWhere',
@@ -125,7 +126,7 @@ export class DateWizardStateService {
   readonly hasPassedQuiz = signal(false);
   readonly showQuiz = signal(false);
 
-  readonly afterDarkStep = signal<AfterDarkStep>(AfterDarkStep.Curfew);
+  readonly afterDarkStep = signal<AfterDarkStep>(AfterDarkStep.Disclaimer);
   readonly curfewTime = signal<CurfewTime | null>(null);
   readonly massageWhere = signal<MassageWhere | null>(null);
   readonly massageHow = signal<MassageHow | null>(null);
@@ -152,6 +153,11 @@ export class DateWizardStateService {
 
   unlockAfterDark(): void {
     this.accessMode.set('afterDark');
+    this.afterDarkStep.set(AfterDarkStep.Disclaimer);
+  }
+
+  acknowledgeAfterDarkDisclaimer(): void {
+    this.afterDarkStep.set(AfterDarkStep.Curfew);
   }
 
   setCurfewTime(time: CurfewTime): void {

@@ -1,5 +1,8 @@
 <div class="after-dark-root">
   @switch (state.afterDarkStep()) {
+    @case (AfterDarkStep.Disclaimer) {
+      <app-disclaimer-step />
+    }
     @case (AfterDarkStep.Curfew) {
       <app-curfew-step />
     }
