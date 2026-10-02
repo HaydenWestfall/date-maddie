@@ -41,7 +41,7 @@ interface TargetDate {
 }
 
 // The day we first met — the "real" password.
-const FIRST_MET: TargetDate = { year: 2019, month: 10, day: 3 };
+const FIRST_MET: TargetDate = { year: 2019, month: 10, day: 23 };
 // A hidden second password nobody's told about. Don't hint at it anywhere in the UI.
 const SECRET_UNLOCK: TargetDate = { year: 2020, month: 6, day: 28 };
 
