@@ -1,0 +1,14 @@
+<div class="card step-card">
+  <div class="step-icon">💆</div>
+  <h2>Interested in getting massaged after the date?</h2>
+  <p class="subtext">
+    What? These are just general questions. Could be leading to anything!
+  </p>
+
+  <div class="button-row">
+    <button type="button" class="primary-button yes-button" (click)="sayYes()">
+      Yes
+    </button>
+    <app-dodge-button label="No" [messages]="noMessages" />
+  </div>
+</div>

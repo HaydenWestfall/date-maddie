@@ -1,0 +1,23 @@
+<div class="after-dark-root">
+  @switch (state.afterDarkStep()) {
+    @case (AfterDarkStep.Curfew) {
+      <app-curfew-step />
+    }
+    @case (AfterDarkStep.MassageGate) {
+      <app-massage-gate-step />
+    }
+    @case (AfterDarkStep.MassageWhere) {
+      <app-massage-where-step />
+    }
+    @case (AfterDarkStep.MassageHow) {
+      <app-massage-how-step />
+    }
+    @case (AfterDarkStep.Summary) {
+      <app-after-dark-summary />
+    }
+  }
+
+  @if (state.showKissCountPopup()) {
+    <app-kiss-count-popup />
+  }
+</div>

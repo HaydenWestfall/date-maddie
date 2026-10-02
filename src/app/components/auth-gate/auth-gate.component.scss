@@ -1,0 +1,68 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(74, 58, 99, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 200;
+}
+
+.popup-card {
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  animation: pop-in-card 0.25s ease-out;
+}
+
+@keyframes pop-in-card {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.lock-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.subtext {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+.field-label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  text-align: left;
+}
+
+.wrong {
+  margin: 1rem 0 0;
+  color: var(--accent-dark);
+  font-weight: 700;
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-8px);
+  }
+  75% {
+    transform: translateX(8px);
+  }
+}

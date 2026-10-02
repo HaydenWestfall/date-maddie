@@ -1,0 +1,28 @@
+<div class="screen">
+  <div class="card proposal-card" [class.celebrating]="isCelebrating()">
+    <div class="sparkle">💐</div>
+    <h1>Will you go on a date with me?</h1>
+    <p class="subtext">
+      I finally have two working legs, you are almost done with volleyball, and
+      now we are filthy rich!
+    </p>
+
+    <div class="button-row">
+      <button
+        type="button"
+        class="primary-button yes-button"
+        [class.hidden]="isCelebrating()"
+        (click)="sayYes()"
+      >
+        Yes 💕
+      </button>
+      @if (!isCelebrating()) {
+        <app-dodge-button label="No" [messages]="noMessages" />
+      }
+    </div>
+
+    @if (isCelebrating()) {
+      <p class="celebrating-text">yay!! 🎉</p>
+    }
+  </div>
+</div>

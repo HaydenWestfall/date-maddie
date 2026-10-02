@@ -1,0 +1,32 @@
+<div class="card step-card">
+  <div class="step-icon">🎵</div>
+  <h2>Car ride playlist</h2>
+  <p class="subtext">
+    Wouldn't be a proper date night without the passenger princess belting some
+    songs.
+  </p>
+
+  <div class="song-inputs">
+    @for (i of slots; track i) {
+      <input
+        type="text"
+        class="text-input"
+        [placeholder]="'Song ' + (i + 1)"
+        [value]="state.songRequests()[i]"
+        (input)="onSongInput(i, $event)"
+      />
+    }
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 16px">
+    <button
+      type="button"
+      class="primary-button continue-button"
+      (click)="continue()"
+    >
+      Continue
+    </button>
+
+    <button type="button" class="back-link" (click)="back()">← back</button>
+  </div>
+</div>

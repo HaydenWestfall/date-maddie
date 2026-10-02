@@ -1,0 +1,17 @@
+<div class="card step-card">
+  <div class="step-icon">🍸</div>
+  <h2>Which bar?</h2>
+  <p class="subtext">
+    Shots?!? No no no, that would be irresponsible. Idk, might be a good idea.
+  </p>
+
+  <div class="choice-grid">
+    @for (option of options; track option) {
+      <button type="button" class="choice-button" (click)="choose(option)">
+        {{ option }}
+      </button>
+    }
+  </div>
+
+  <button type="button" class="back-link" (click)="back()">← back</button>
+</div>

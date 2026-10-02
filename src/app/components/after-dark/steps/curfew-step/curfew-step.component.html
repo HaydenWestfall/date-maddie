@@ -1,0 +1,13 @@
+<div class="card step-card">
+  <div class="step-icon">😏</div>
+  <h2>How early should I have you back home?</h2>
+  <p class="subtext">No reason... Just a question?</p>
+
+  <div class="choice-grid">
+    @for (option of options; track option) {
+      <button type="button" class="choice-button" (click)="choose(option)">
+        {{ option }}
+      </button>
+    }
+  </div>
+</div>

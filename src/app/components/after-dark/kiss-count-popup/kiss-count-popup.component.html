@@ -1,0 +1,30 @@
+<div class="overlay">
+  <div class="card popup-card kiss-count-card">
+    <div class="icon">💋</div>
+    <h2>Kiss count</h2>
+    <p class="subtext">How many are we talking tonight?</p>
+
+    <div class="preset-grid">
+      @for (n of presets; track n) {
+        <button type="button" class="choice-button preset" (click)="choose(n)">
+          {{ n }}
+        </button>
+      }
+    </div>
+
+    <label class="field-label" for="kiss-custom">Feeling ambitious? Name your own number:</label>
+    <div class="custom-row">
+      <input
+        id="kiss-custom"
+        type="number"
+        min="1"
+        class="text-input"
+        placeholder="e.g. 27"
+        [value]="customValue()"
+        (input)="onCustomInput($event)"
+        (keyup.enter)="submitCustom()"
+      />
+      <button type="button" class="primary-button" (click)="submitCustom()">Set</button>
+    </div>
+  </div>
+</div>

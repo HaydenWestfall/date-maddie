@@ -1,1 +1,164 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --bg-gradient: linear-gradient(160deg, #ffe3ec 0%, #ffd6e8 35%, #e6d6ff 70%, #d9c7ff 100%);
+  --card-bg: #fffaf6;
+  --accent: #ff6f91;
+  --accent-dark: #e85b7e;
+  --accent-soft: #ffd6e0;
+  --lavender: #c9a7ff;
+  --text-dark: #4a3a63;
+  --text-muted: #8a7aa3;
+  --shadow-soft: 0 10px 30px rgba(155, 100, 150, 0.18);
+  --choice-bg: #fff;
+  --input-bg: #fff;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: 'Quicksand', system-ui, sans-serif;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-dark);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
+  color: var(--accent-dark);
+  margin: 0 0 0.5rem;
+}
+
+button {
+  font-family: inherit;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 28px;
+  box-shadow: var(--shadow-soft);
+  padding: 2rem 1.75rem;
+}
+
+.choice-grid {
+  display: grid;
+  gap: 0.9rem;
+  margin: 1.5rem 0;
+}
+
+.choice-button {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 1rem 1.25rem;
+  border-radius: 18px;
+  border: 2px solid transparent;
+  background: var(--choice-bg);
+  color: var(--text-dark);
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 3px 10px rgba(155, 100, 150, 0.1);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(155, 100, 150, 0.18);
+  }
+
+  &.selected {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    color: var(--accent-dark);
+  }
+}
+
+.primary-button {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.9rem 2.2rem;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--lavender));
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(232, 91, 126, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  text-decoration: none;
+  display: inline-block;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(232, 91, 126, 0.45);
+  }
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+  }
+}
+
+.step-card {
+  max-width: 460px;
+  width: 100%;
+  text-align: center;
+}
+
+.step-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.subtext {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin: 0 0 0.5rem;
+}
+
+.continue-button {
+  margin-top: 1.5rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 1.25rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-family: inherit;
+}
+
+.text-input {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
+  border: 2px solid var(--accent-soft);
+  background: var(--input-bg);
+  color: var(--text-dark);
+  width: 100%;
+  margin-top: 0.5rem;
+
+  &:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+}

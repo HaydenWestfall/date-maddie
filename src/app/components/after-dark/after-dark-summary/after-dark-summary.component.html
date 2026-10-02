@@ -1,0 +1,16 @@
+<div class="card step-card summary-card">
+  <div class="step-icon">😏</div>
+  <h2>Noted.</h2>
+  <p class="subtext">Here's what I'm working with:</p>
+
+  <ul class="recap-list">
+    <li><span class="recap-label">Home by</span>{{ state.curfewTime() }}</li>
+    <li><span class="recap-label">Where</span>{{ state.massageWhere() }}</li>
+    <li><span class="recap-label">Kiss count</span>{{ state.kissCount() }}</li>
+    <li><span class="recap-label">How</span>{{ state.massageHow() }}</li>
+  </ul>
+
+  <a class="primary-button continue-button" [href]="buildMailtoUrl()">
+    Send it to him 😏
+  </a>
+</div>

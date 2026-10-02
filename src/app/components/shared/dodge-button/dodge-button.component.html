@@ -1,0 +1,20 @@
+<button type="button" class="dodge-button spacer" [class.gone]="!hasHopped()" tabindex="-1" aria-hidden="true">
+  {{ label }}
+</button>
+
+<button
+  type="button"
+  class="dodge-button live"
+  [class.hopped]="hasHopped()"
+  [style.top.px]="hasHopped() ? top() : null"
+  [style.left.px]="hasHopped() ? left() : null"
+  (click)="hop()"
+>
+  {{ label }}
+</button>
+
+@if (activeMessage()) {
+  <div class="dodge-message" [style.top.px]="top()" [style.left.px]="left()">
+    {{ activeMessage() }}
+  </div>
+}

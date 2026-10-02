@@ -1,0 +1,16 @@
+<div class="card step-card">
+  <div class="step-icon">🍰🍸</div>
+  <h2>Dessert or drinks?</h2>
+  <p class="subtext">Sooo, what are the vibes going to be like after dinner?</p>
+
+  <div class="choice-grid">
+    <button type="button" class="choice-button" (click)="choose('dessert')">
+      Dessert 🍰
+    </button>
+    <button type="button" class="choice-button" (click)="choose('drinks')">
+      Drinks 🍸
+    </button>
+  </div>
+
+  <button type="button" class="back-link" (click)="back()">← back</button>
+</div>

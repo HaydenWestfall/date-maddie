@@ -1,0 +1,18 @@
+<div class="overlay">
+  <div class="card popup-card">
+    <div class="flower">💐</div>
+    <h2>Do you want flowers too?</h2>
+    <p class="subtext">Dont be shy, you deserve them.</p>
+
+    <div class="button-row">
+      <button
+        type="button"
+        class="primary-button yes-button"
+        (click)="sayYes()"
+      >
+        Yes please 🌸
+      </button>
+      <app-dodge-button label="No" [messages]="noMessages" />
+    </div>
+  </div>
+</div>

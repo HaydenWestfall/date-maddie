@@ -1,0 +1,26 @@
+<div class="overlay">
+  <div class="card popup-card auth-card">
+    <div class="lock-icon">🔒</div>
+    <h2>Woah woah woah</h2>
+    <p class="subtext">This page is for Madison Westfall's eyes only, please authenticate yourself.</p>
+
+    <label class="field-label" for="auth-date">When did we first meet?</label>
+    <input
+      id="auth-date"
+      type="text"
+      class="text-input"
+      placeholder="YYYY-MM-DD"
+      [value]="answer()"
+      (input)="onInput($event)"
+      (keyup.enter)="submit()"
+    />
+
+    <button type="button" class="primary-button continue-button" (click)="submit()">
+      Let me in
+    </button>
+
+    @if (wrongMessage()) {
+      <p class="wrong">{{ wrongMessage() }}</p>
+    }
+  </div>
+</div>

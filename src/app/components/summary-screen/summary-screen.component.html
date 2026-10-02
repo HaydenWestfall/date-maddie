@@ -1,0 +1,17 @@
+<div class="card step-card summary-card">
+  <div class="step-icon">🎉</div>
+  <h2>It's official!</h2>
+  <p class="subtext">Here's the plan:</p>
+
+  <ul class="recap-list">
+    <li><span class="recap-label">Pumpkins & mums</span>{{ pumpkinsLabel }}</li>
+    <li><span class="recap-label">Dinner</span>{{ state.dinner() }}</li>
+    <li><span class="recap-label">After</span>{{ afterDinnerLabel }}</li>
+    <li><span class="recap-label">Date</span>{{ dateLabel }}</li>
+    <li><span class="recap-label">Car ride playlist</span>{{ songsLabel }}</li>
+  </ul>
+
+  <a class="primary-button continue-button" [href]="buildMailtoUrl()">
+    Send selections to the smartest, hottest, most important person you know 💌
+  </a>
+</div>

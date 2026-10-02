@@ -1,0 +1,30 @@
+<div class="overlay">
+  <div class="card popup-card">
+    <div class="quiz-icon">📝</div>
+    <h2>Mmm, before we continue...</h2>
+    <p class="progress">
+      Question {{ index() + 1 }} of {{ questions.length }}<br />
+      A failure on this quiz will void the entire date, so choose carefully.
+    </p>
+
+    <p class="prompt">{{ current().prompt }}</p>
+
+    <div class="options" [class.grid]="current().grid">
+      @for (option of current().options; track option) {
+        <button
+          type="button"
+          class="choice-button option"
+          (click)="answer(option)"
+        >
+          {{ option }}
+        </button>
+      }
+    </div>
+
+    @if (wrongMessage()) {
+      @for (k of [shakeKey()]; track k) {
+        <p class="wrong">{{ wrongMessage() }}</p>
+      }
+    }
+  </div>
+</div>

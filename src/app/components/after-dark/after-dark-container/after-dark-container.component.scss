@@ -1,0 +1,21 @@
+.after-dark-root {
+  --bg-gradient: linear-gradient(160deg, #1a0a14 0%, #2b0a1f 45%, #190a24 100%);
+  --card-bg: #241321;
+  --accent: #ff2d6f;
+  --accent-dark: #ff6f91;
+  --accent-soft: #3a1830;
+  --lavender: #8b2fc9;
+  --text-dark: #f6e9f1;
+  --text-muted: #c08fae;
+  --shadow-soft: 0 10px 34px rgba(0, 0, 0, 0.55);
+  --choice-bg: #33182e;
+  --input-bg: #33182e;
+  color-scheme: dark;
+
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: var(--bg-gradient);
+}

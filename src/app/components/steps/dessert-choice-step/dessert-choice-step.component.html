@@ -1,0 +1,33 @@
+<div class="card step-card">
+  <div class="step-icon">🍰</div>
+  <h2>Which dessert?</h2>
+
+  <div class="choice-grid">
+    @for (option of options; track option) {
+      <button
+        type="button"
+        class="choice-button"
+        [class.selected]="state.dessertChoice() === option"
+        (click)="choose(option)"
+      >
+        {{ option }}
+      </button>
+    }
+  </div>
+
+  @if (state.dessertChoice() === 'Other') {
+    <input
+      type="text"
+      class="text-input"
+      placeholder="What are you craving?"
+      [value]="state.dessertCustomText()"
+      (input)="onCustomTextInput($event)"
+    />
+
+    <button type="button" class="primary-button continue-button" [disabled]="!state.canLeaveSubChoice()" (click)="continue()">
+      Continue
+    </button>
+  }
+
+  <button type="button" class="back-link" (click)="back()">← back</button>
+</div>

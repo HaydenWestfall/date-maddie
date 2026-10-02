@@ -1,0 +1,37 @@
+<div class="screen">
+  @switch (state.currentStep()) {
+    @case (WizardStep.Pumpkins) {
+      <app-pumpkins-step />
+    }
+    @case (WizardStep.Dinner) {
+      <app-dinner-step />
+    }
+    @case (WizardStep.AfterDinner) {
+      <app-after-dinner-step />
+    }
+    @case (WizardStep.SubChoice) {
+      @if (state.afterDinner() === 'dessert') {
+        <app-dessert-choice-step />
+      } @else {
+        <app-drinks-choice-step />
+      }
+    }
+    @case (WizardStep.DatePick) {
+      <app-date-step />
+    }
+    @case (WizardStep.Music) {
+      <app-music-step />
+    }
+    @case (WizardStep.Summary) {
+      <app-summary-screen />
+    }
+  }
+</div>
+
+@if (state.showFlowerPopup()) {
+  <app-flower-popup />
+}
+
+@if (state.showQuiz()) {
+  <app-quiz-popup />
+}
